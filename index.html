@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Travel Booking</title>
+<base href="index.html">
+<meta name="theme-color" content="#a20808">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="#" type="image/x-icon">
+<link rel="icon" href="#" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style type="text/css">
+.lnkhigh{line-height:21px;position:absolute;right:42px;top:12px;background:#e80c0c;padding:0 16px;font-size:12px;color:#fff;border-radius:2px;animation:blink 1s linear infinite}.lnkhigh::after{border-style:solid;border-width:5px 5px 0 0;border-color:#b93e19 transparent transparent;bottom:-4px;content:"";right:0;position:absolute}.lnkhigh i{position:absolute;opacity:0;top:0;left:0;background:-moz-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:-webkit-gradient(linear,left top,right top,color-stop(0%,rgba(255,255,255,0)),color-stop(1%,rgba(255,255,255,0.03)),color-stop(30%,rgba(255,255,255,0.85)),color-stop(50%,rgba(255,255,255,0.85)),color-stop(70%,rgba(255,255,255,0.85)),color-stop(71%,rgba(255,255,255,0.85)),color-stop(100%,rgba(255,255,255,0)));background:-webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:-o-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:-ms-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#00ffffff',GradientType=1);width:35%;height:100%;transform:skew(-10deg,0deg);-webkit-transform:skew(-10deg,0deg);-moz-transform:skew(-10deg,0deg);-ms-transform:skew(-10deg,0deg);-o-transform:skew(-10deg,0deg);animation:move 2s;animation-iteration-count:infinite;animation-delay:.3s;-webkit-animation:move 2s;-webkit-animation-iteration-count:infinite;-webkit-animation-delay:.3s;-moz-transform:skew(-10deg,0deg);-moz-animation:move 2s;-moz-animation-iteration-count:infinite;-moz-animation-delay:.3s;-ms-transform:skew(-10deg,0deg);-ms-animation:move 2s;-ms-animation-iteration-count:infinite;-ms-animation-delay:.3s;-o-transform:skew(-10deg,0deg);-o-animation:move 2s;-o-animation-iteration-count:infinite;-o-animation-delay:.3s}@keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}@-webkit-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}@-moz-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:88%}}@-ms-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}@-o-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}
+.fxtxt{position: fixed;
+    left: 12px;
+    top: 30%;
+    transform: rotate(90deg);
+    transform-origin: 0;
+    background: #282a77;
+    padding: 4px 10px;
+    border-radius: 7px;
+    animation: blink 1s linear infinite;
+    z-index:9999;
+}
+@keyframes blink {
+    0%{color:#fff;}
+    50%{color:#f1dada;}
+    100%{color:#fff;}
+ }
+@media(max-width:767px){
+    .lnkhigh{left:60px;top: 1px;right: unset;}
+	.fxtxt{padding: 2px 7px;
+    font-size: 11px;
+    left: 8px;
+    border-radius: 4px;z-index: 99;}
+    .bredcrums-content {
+	    padding: 70px 15px 7px 0!important;
+	}
+}
+.mysidebar{
+    background: -webkit-linear-gradient(to right, #282a77, #282a77, #282a77, #282a77, #282a77);
+    background: -o-linear-gradient(to right, #282a77, #282a77, #282a77, #282a77, #282a77);
+    background: -moz-linear-gradient(to right, #282a77, #282a77, #282a77, #282a77, #282a77);
+    background: linear-gradient(to right, #282a77, #282a77, #282a77, #282a77, #282a77);
+    border-radius: 10px;
+    padding: 36px 15px;
+}
+</style><style type="text/css">
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.bg-white{background-color:#fff}
+.home-banner-area .enquiry-form .select-box{position:relative;-webkit-box-shadow: 0 0 29px 0 rgb(226 182 182 / 10%);box-shadow: 0 0 29px 0 rgb(226 182 182 / 10%);margin-bottom:15px;cursor:pointer;border:1px dotted #282a77;border-radius:6px}
+.home-banner-area .enquiry-form .select-box .form-control{padding:12px 0 12px 18px}
+.home-banner-area .enquiry-form .btn-primary{border-radius:6px;width:100%;-webkit-box-shadow:none;box-shadow:none}
+.home-banner-area .inner-container{position:relative}
+.home-banner-area .inner-container .shapes-layer-one .shape1{position:absolute;left:0;top:0;background-repeat:no-repeat;max-height:40px}
+.home-banner-area .shapes-layer-one .shape1{-webkit-animation:moveleftbounce 5s linear infinite;animation:moveleftbounce 5s linear infinite}
+@-webkit-keyframes moveleftbounce {
+0%{-webkit-transform:translateX(0px);transform:translateX(0px)}
+50%{-webkit-transform:translateX(100px);transform:translateX(100px)}
+100%{-webkit-transform:translateX(0px);transform:translateX(0px)}
+}
+.home-banner-area .inner-container .shapes-layer-one .shape3{position:absolute;right:50%;top:35%;background-repeat:no-repeat;max-height:50px}
+.home-banner-area .shapes-layer-one .shape3{animation:myfirst 5s linear 2s infinite alternate}
+@keyframes myfirst {
+0%{left:0;top:0}
+25%{left:200px;top:0}
+50%{left:200px;top:200px}
+75%{left:0;top:200px}
+100%{left:0;top:0}
+}
+.home-banner-area .inner-container .shapes-layer-one .shape2{position:absolute;left:23%;top:33%;opacity:.6;background-repeat:no-repeat;-webkit-animation:movescale 5s linear infinite;animation:movescale 5s linear infinite}
+@-webkit-keyframes movescale {
+0%{-webkit-transform:scale(.8);transform:scale(.8)}
+50%{-webkit-transform:scale(1);transform:scale(1)}
+100%{-webkit-transform:scale(.8);transform:scale(.8)}
+}
+.home-banner-area .shapes-layer-one .shape3{animation:fall 15s linear infinite;animation-delay:-4s}
+.home-banner-area .inner-container .shapes-layer-one .shape4{position:absolute;left:0;bottom:0;background-repeat:no-repeat;max-height:50px}
+.home-banner-area .shapes-layer-one .shape4{-webkit-animation:moveleftbounce 5s linear infinite;animation:moveleftbounce 5s linear infinite}
+.home-banner-area{position:relative;overflow:hidden;z-index:1}
+.home-banner-area .banner-content{max-width:544px;margin-left:auto}
+.home-banner-area .banner-content .sub-title{font-size:18px;font-weight:500;color:#4141a5}
+.home-banner-area .banner-content h1{font-size:70px;color:#1c2356;margin-bottom:20px;line-height:1.1;font-family:'Nunito',sans-serif;font-weight:800}
+.home-banner-area .banner-content p{font-size:18px;color:#000;margin-bottom:35px}
+.home-banner-area .banner-slider{position:relative;overflow:hidden}
+.home-banner-area .enquiry-form .select-box i{position:absolute;top:50%;right:18px;font-size:22px;-webkit-transform:translateY(-50%);transform:translateY(-50%);color:#1b235666;z-index:1}
+.home-banner-area .banner-slider .slider-item{position:relative;width:100%;max-height:100vh;background-size:cover}
+.home-banner-area .banner-slider::before{position:absolute;content:'';top:0;bottom:0;left:0;right:0;width:100%;height:100%;background:url(assets/images/image/banners/splash.jpg);background-repeat:no-repeat;background-size:180%;background-position:center;mix-blend-mode:screen;z-index:999}
+.home-banner-area .banner-slider .slider-item .content span{color:#f9f8fe}
+.home-banner-area .banner-slider .slider-item .content h3{margin-bottom:5px}
+.home-banner-area .banner-slider .slider-item .content h3 a{color:#fff;text-decoration:underline}
+.home-banner-area .banner-slider .slider-item .content h3 a:hover{color:#fd5056}
+.home-banner-area .banner-slider .owl-item.active .content{-webkit-animation:zoomIn .5s linear 1;animation:zoomIn .5s linear 1}
+.home-banner-area .banner-slider .owl-nav{position:absolute;top:30px;right:50px;z-index:9999}
+.home-banner-area .banner-slider .owl-nav .owl-prev,.home-banner-area .banner-slider .owl-nav .owl-next{width:40px;height:40px;border-radius:50%;background:#282a77;padding:2px;line-height:38px;-webkit-transition:.5s;transition:.5s;text-align:center;color:#fff;font-size:17px;-webkit-transition:all 300ms ease;-ms-transition:all 300ms ease;-o-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease}
+.home-banner-area .banner-slider .owl-nav .owl-prev{position:relative;right:50px}
+.home-banner-area .banner-slider .owl-nav .owl-prev:hover,.home-banner-area .banner-slider .owl-nav .owl-next:hover{background-color:#004d40;color:#fff}
+.home-banner-area .owl-dots{position:absolute;right:0;bottom:0;z-index:1}
+.home-banner-area .owl-dots .owl-dot{cursor:pointer;display:inline-block;margin-right:12px;border-radius:10px;max-width:80px;-webkit-transition:.5s;transition:.5s;-webkit-box-shadow:0 0 29px 0 rgba(102,102,102,.1);box-shadow:0 0 29px 0 rgba(102,102,102,.1)}
+.home-banner-area .owl-dots .owl-dot:last-child{margin-right:0}
+.home-banner-area .owl-dots .owl-dot:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px)}
+@keyframes fall {
+0%{opacity:1;top:-10%;transform:translateX (20px) rotate(0deg)}
+20%{opacity:.8;transform:translateX (-20px) rotate(45deg)}
+40%{transform:translateX (-20px) rotate(90deg)}
+60%{transform:translateX (-20px) rotate(135deg)}
+80%{transform:translateX (-20px) rotate(180deg)}
+100%{top:110%;transform:translateX (-20px) rotate(225deg)}
+}
+.welcome-area{padding:100px 0 70px}
+.welcome-area .section-title-version-2{padding-top:30px}
+.welcome-area .section-title-version-2 h1{position:relative;font-size:37px;font-weight:600;line-height:38px;padding-bottom:30px;margin-bottom:25px;color:#333;text-transform:capitalize}
+.welcome-area .section-title-version-2 h1::before{position:absolute;content:"";width:90px;height:13px;margin-left:0;bottom:0;background:url(assets/images/image/ss.png)}
+.welcome-area .single-welcome-area .single-imag .img-thumbnail{background-color:#f7f7f7;border-radius:0;padding:15px;border:none}
+.welcome-area .single-welcome-area .overlay-image{bottom:-40px;height:auto;position:absolute;left:-45px;max-width:100%}
+.welcome-area .single-welcome-area .overlay-image .img-thumbnail{background-color:#f7f7f7;border-radius:0;padding:10px;border:none}
+.welcome-area .single-welcome-text{padding-right:60px}
+.welcome-area .single-welcome-text .welcome-content p{font-size:15px;font-weight:15px;color:#000}
+.welcome-area .single-welcome-text .welcome-content a{font-size:15px;color:#fff;font-weight:600;transition:.4s}
+.welcome-area .single-welcome-text .welcome-content a:hover{background-color:#0ea2e2}
+.welcome-area .read-mor{padding:10px 30px!important;background-color:#282a77;border-radius:9px;color:#fff;display:inline-block;font-weight:500;letter-spacing:1px;text-transform:uppercase;border:2px solid #282a77;font-family:'Rubik',sans-serif;margin-top:20px;transition:.4s}
+.welcome-area .read-mor:hover{background-color:#23bcc8;border-color:#23bcc8}
+.tour-categories{position:relative;padding:100px 0 70px;background-size:cover;background-repeat:no-repeat;background-position:center}
+.tour-categories:before{position:absolute;content:"";top:0;bottom:0;left:0;right:0;background-image:url(../images/background/travelbg.jpg);opacity:.2}
+.tour-categories .image-box{margin-top:50px}
+.tour-categories .image-box img{width:370px}
+.tour-categories .tour-img{border-radius:50%;border:3px solid #fff;height:64px;width:64px;margin:0 auto;padding:10px;box-shadow: 0px 0px 20px rgb(255 255 255 / 35%);background-color:#282a77}
+.tour-categories-style{padding:20px 20px 10px;max-width:280px;box-shadow:4px 13px 50px 2px rgba(0,0,0,0.15);background:linear-gradient(to right,#282a77,#1a116c);margin-bottom:40px;border-radius:15px;color:#fff;text-align:center}
+.tour-categories-style h3{color:#fff;font-size:20px;font-weight:700;text-transform:capitalize}
+.tour-categories .left-inner-box .tour-categories-style:nth-child(1){left:10px;position:relative}
+.tour-categories .left-inner-box .tour-categories-style:nth-child(2){left:80px;position:relative}
+.tour-categories .left-inner-box .tour-categories-style:nth-child(3){left:10px;position:relative}
+.tour-categories .right-inner-box .tour-categories-style:nth-child(1){left:62px;position:relative}
+.tour-categories .right-inner-box .tour-categories-style:nth-child(2){left:15px;position:relative}
+.tour-categories .right-inner-box .tour-categories-style:nth-child(3){left:62px;position:relative}
+.tour-section{padding:70px 0}
+.tour-section .item-single{position:relative;overflow:hidden}
+.tour-section .item-single img{border-radius:5px}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.tour-section .item-single img{width:100%!important}
+}
+.tour-section .item-single .content{position:absolute;bottom:0;left:15px;background:#fff;border-radius:7px;padding:25px 16px;width:100%;max-width:calc(100% - 30px);-webkit-transition:.5s;transition:.5s;-webkit-box-shadow:0 0 30px 0 rgba(102,102,102,.09);box-shadow:0 0 30px 0 rgba(102,102,102,.09)}
+.tour-section .item-single .content i{color:#de3928;margin-right:4px;vertical-align:-1px}
+.tour-section .item-single .content span{color:#f76267;font-size:15px;font-family:'Nunito',sans-serif;font-weight:400}
+.tour-section .item-single .content h3{margin-top:5px;margin-bottom:5px;font-size:20px;font-family:'Nunito',sans-serif;font-weight:600;min-height:48px!important;line-height:26px!important;overflow:hidden!important;text-overflow:ellipsis!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.tour-section .item-single .content h3 a{color:#000}
+.tour-section .item-single .content h3 a:hover{color:#fd5056}
+.tour-section .item-single .content p{padding-top:15px;display:none;font-size:15px}
+.tour-section .item-single .content .list{padding:0;margin-bottom:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.tour-section .item-single .content .view i{color:#fff}
+.tour-section .item-single .content .enquiry i{color:#fff}
+.tour-section .item-single:hover .content{background:linear-gradient(to right,#eb3449,#ee3f47,#f04846,#f25144,#f45a43);-webkit-animation:fadeInUp .3s linear 1;animation:fadeInUp .3s linear 1}
+.tour-section .item-single:hover .content i{color:#d6d6d6}
+.tour-section .item-single:hover .content span{color:#fff}
+.tour-section .item-single:hover .content h3 a{-webkit-transition:none;transition:none;color:#fff}
+.tour-section .item-single:hover .content h3 a:hover{color:#ffeb3b}
+.tour-section .item-single:hover .content .list li{color:#d6d6d6}
+.tour-section .item-single:hover .content .list li:last-child{color:#fff}
+.tour-section .item-single:hover .content p{color:#fff;display:block}
+.tour-section .item-single .spacer{width:100%;min-height:150px}
+.tour-section .item-single .content hr{border-top:1px solid #520000}
+.features-section{position:relative;background-repeat:no-repeat;background-size:cover;background-position:center;padding:100px 0 20px}
+.features-section:before{position:absolute;content:"";top:0;bottom:0;left:0;right:0;background:rgba(255,255,255,0.79)}
+.features-block-one{position:relative;padding:30px 30px 20px;box-shadow: 0px 5px 19px 0px rgb(123 81 78 / 38%);overflow:hidden;margin-bottom:30px;border-bottom:3px solid #282a77;border-radius:10px;background:#fff}
+.features-block-one:before{position:absolute;content:'';top:10px;right:0;width:100px;height:56px;background-image:url(assets/images/background/pt1.png);background-repeat:no-repeat}
+.features-block-one .inner-box{position:relative;transition:.7s ease}
+.features-block-one .icon{width:100px;height:100px;border:1px solid #282a77;border-radius:50%;display:flex;flex-direction:column;vertical-align:middle;align-items:center;align-content:center;justify-content:center;position:relative;margin:0 auto}
+.features-block-one .icon span{position:absolute;width:25px;height:25px;background:#282a77;border-radius:50%;top:-17px;line-height:24px;color:#fff;border:5px solid #fff;box-sizing:content-box;text-align:center}
+.features-block-one .icon img{width:50px}
+.features-block-one h4{position:relative;font-size:18px;line-height:27px;text-transform:capitalize;margin-bottom:10px;transition:.5s ease;margin-top:20px;font-family:'Nunito',sans-serif;font-weight:600}
+.features-block-one h4 a{color:#333}
+.features-block-one h4 a:hover{color:#ff5722;transition:.5s}
+.features-block-one .text{position:relative;margin-bottom:15px;transition:.5s ease}
+.features-block-one .read-more-btn a{position:relative;font-size:16px;font-weight:600;color:#212333;transition:.5s ease}
+.features-block-one .read-more-btn a:hover{color:#ff5722}
+.hvr-float{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);transform:translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);-webkit-backface-visibility:hidden;backface-visibility:hidden;-moz-osx-font-smoothing:grayscale;-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:transform;transition-property:transform;-webkit-transition-timing-function:ease-out;transition-timing-function:ease-out}
+.hvr-float:hover,.hvr-float:focus,.hvr-float:active{-webkit-transform:translateY(-8px);transform:translateY(-8px)}
+.about-section{padding:100px 0 70px}
+.use-text-subtitle2{font-size:22px;line-height:32px;font-family:'Nunito',sans-serif;font-weight:500}
+@media (max-width: 1279px) {
+.use-text-subtitle2{font-size:20px;line-height:32px}
+}
+@media (max-width: 599px) {
+.use-text-subtitle2{font-size:16px;line-height:24px}
+}
+#about .root{background:url(assets/images/image/about/about.jpg),red;background-repeat:no-repeat;position:relative;color:#fff;padding:96px 0;background-size: cover;}
+@media (max-width: 599px) {
+#about .root{text-align:center;padding:48px 0}
+}
+#about .title-about{margin-bottom:24px}
+#about .title-about h3{margin-bottom:8px;position:relative;font-weight:800;font-size:42px;display:inline-block;line-height:normal;color:#fff}
+@media (max-width: 599px) {
+#about .title-about h3{font-size:28px}
+}
+#about .title-about h3 span{position:relative}
+#about .title-about h3:before{content:'';height:15px;background-color:#282a77;width:90%;position:absolute;bottom:4px;z-index:0;left:0;right:0}
+@media (max-width: 599px) {
+#about .title-about h3:before{height:8px}
+}
+#about p{margin-bottom:40px}
+#about .btn.white{width:180px;font-size:18px;color:#00838f!important}
+#about .illu-wrap{position:static}
+#about .illustration{-webkit-box-shadow: 11px 0 18px 0 #00000070;box-shadow: 11px 0 18px 0 #00000070;position:absolute;border:6px solid #fff;background:#282a77;border-radius:22px;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);overflow:hidden}
+#about .illustration img{height:105%;-webkit-transform:translateX(1%) rotate(-45deg) scale(1.5);-ms-transform:translateX(1%) rotate(-45deg) scale(1.5);transform:translateX(2%) rotate(-45deg) scale(1.5)}
+#about .illustration.two img{-webkit-transform:translateX(19%) rotate(-46deg) scale(1.6);-ms-transform:translateX(19%) rotate(-46deg) scale(1.6);transform:translateX(19%) rotate(-46deg) scale(1.6)}
+#about .illustration.one{border-radius:15px;width:60px;height:60px;top:-10px;left:100px;right:100px}
+#about .illustration.two{width:180px;height:180px;top:-10px;left:300px}
+#about .illustration.three{width:160px;height:160px;top:130px;left:50px;right:50px}
+#about .illustration.four{width:210px;height:210px;bottom:-30px;left:250px}
+#about .illustration.five{border-radius:15px;width:60px;height:60px;bottom:-30px;right:10px}
+@media (max-width: 959px) {
+.hidden-sm-down{display:none!important}
+}
+@-webkit-keyframes fadeInRight {
+0%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}
+to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
+}
+@keyframes fadeInRight {
+0%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}
+to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
+}
+.fadeInRight{-webkit-animation-name:fadeInRight;animation-name:fadeInRight}
+.top-vist-tour-section{padding:70px 0 100px}
+.top-vist-tour{position:relative;border:10px solid #fff;margin:0 auto;box-shadow:0 0 15px rgba(0,0,0,0.2);border-radius:10px;margin-bottom:25px;margin-top:8px}
+.top-vist-tour:before{position:absolute;content:"";width:90%;height:90%;top:5%;left:5%;border-radius:32px}
+.top-vist-tour .inner-box img{width:100%}
+.mx-auto{margin-left:auto!important;margin-right:auto!important}
+.top-vist-tour .inner-box .bg-transparent{background-color:red!important;border-radius:4px}
+.top-vist-tour .inner-box .top-vist-tour-content h3{line-height:24px;margin-top:12px;text-align:center;margin-bottom:8px}
+.top-vist-tour .inner-box .top-vist-tour-content h3 a{font-size:20px;font-weight:700;color:#333;transition:.5s}
+.top-vist-tour .inner-box .top-vist-tour-content h3 a:hover{color:#ff5722;transition:.5s}
+.top-vist-tour .inner-box .top-vist-tour-content .text{line-height:25px;margin-top:8px}
+.top-vist-tour .inner-box .top-vist-tour-content .des-cities{padding:5px 0;border-radius:26px;background:#fde5df!important;color:#ff1f08;display:block;text-align:center}
+.top-vist-tour .inner-box .top-vist-tour-content .des-cities strong{margin-right:3px}
+.destinations-section .section-title{margin-left:0;text-align-last:left}
+.destination-section{background-color:#f7f8f8;position:relative;padding:40px 0 70px}
+.destination-section::before{position:absolute;content:"";top:0;bottom:0;left:0;right:0;background-image:url(assets/images/background/destination.png);background-size:cover}
+.destination-section .desbox{position:relative}
+.destination-section .desbox p{position:absolute;top:50%;left:50%;transform:translate(-50%);opacity:0;transition:.5s;color:#fff;font-size:18px}
+.destination-section .desbox:hover p{opacity:1;z-index:1}
+.destination-section .desbox::after{opacity:0}
+.destination-section .desbox:hover::after{opacity:1}
+.destination-section .image-cover{border-radius:50%;margin:20px 0;object-fit:cover;object-position:center right;transition:.7s;-webkit-transition:.7s;-moz-transition:.7s;-ms-transition:.7s;-o-transition:.7s;overflow:hidden;border:5px ridge #f3efee}
+.destination-section .desbox:hover .image-cover{transition:.7s;-webkit-transition:.7s;-moz-transition:.7s;-ms-transition:.7s;-o-transition:.7s;-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}
+.destination-section .desbox::after{position:absolute;content:'';top:0;left:0;width:100%;height:100%;border-radius:50%;background:linear-gradient(0deg,#310000 0%,rgba(9,0,49,0.0508578) 100%)}
+.destination-section .inner-container{position:relative}
+.destination-section .inner-container .bg-img .image-1{position:absolute;width:215px;background-repeat:no-repeat;transform:rotate(1deg);opacity:.4}
+.destination-section .inner-container .bg-img .image-2{position:absolute;right:2%;width:215px;background-repeat:no-repeat;transform:rotate(71deg);opacity:.4}
+.destination-section .desbox a{color:#fff;font-family:Satisfy,cursive;font-weight:400;font-size:30px;cursor:pointer}
+.destination-section .desbox a:hover{color:#ff9901}
+.destination-section .owl-nav{position:relative;text-align:center;margin-top:15px}
+.destination-section .owl-nav .owl-prev,.destination-section .owl-nav .owl-next{position:relative;margin-left:15px;width:45px;height:45px;font-size:20px;border-radius:50%;color:#fff;line-height:44px;text-align:center;display:inline-block;background-color:#19bbd0;-webkit-transition:all 300ms ease;-ms-transition:all 300ms ease;-o-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease}
+.destination-section .owl-nav .owl-prev:hover,.destination-section .owl-nav .owl-next:hover{background-color:#043b63;color:#fff}
+@media(max-width: 767px) {
+.home-banner-area .banner-content h1{font-size:40px;text-align:center}
+.home-banner-area .banner-content p{font-size:14px;text-align:center;margin-bottom:30px}
+.home-banner-area .shapes-layer-one{display:none}
+.welcome-area{padding:0}
+.welcome-area .section-title-version-2 h1{font-size:28px;text-align:center}
+.welcome-area .section-title-version-2 h1::before{position:absolute;content:"";margin-left:142px;top:48px}
+.welcome-area .single-welcome-text{padding-right:0}
+.welcome-area .single-welcome-area{display:none}
+.welcome-area .read-mor{padding:10px 20px!important;background-color:#ff0404;border-radius:9px;margin-top:10px;font-size:12px}
+.rdmcen{text-align:center}
+.tour-section{padding:0;padding-bottom:40px}
+.tour-section .item-single .content h3{font-size:18px;font-weight:700}
+.features-section{padding:40px 0}
+.tour-categories{padding:40px 0 70px}
+.destion-section{padding-bottom:40px}
+.destination-section .owl-dots{display:none}
+.destination-section .owl-nav{position:relative;text-align:center;margin-top:0}
+.destination-section .owl-nav .owl-prev,.destination-section .owl-nav .owl-next{position:relative;margin-left:15px;width:35px;height:35px;font-size:15px;border-radius:50%;color:#fff;line-height:34px;text-align:center;display:inline-block;background-color:#19bbd0;-webkit-transition:all 300ms ease;-ms-transition:all 300ms ease;-o-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease}
+.destination-section .owl-nav .owl-prev:hover,.destination-section .owl-nav .owl-next:hover{background-color:#043b63;color:#fff}
+.destination-section .desbox p{opacity:1}
+.destination-section .desbox a{color:#fff;font-family:'Nunito',sans-serif;font-weight:700;font-size:22px;cursor:pointer}
+.about-section{padding:0}
+.top-vist-tour-section{padding-bottom:40px}
+.tour-categories-style{max-width:530px;margin:0 auto;margin-bottom:30px}
+.tour-categories .image-box{text-align:center;margin-top:20px;margin-bottom:30px}
+.tour-categories .left-inner-box .tour-categories-style:nth-child(1){left:0}
+.tour-categories .left-inner-box .tour-categories-style:nth-child(2){left:0}
+.tour-categories .left-inner-box .tour-categories-style:nth-child(3){left:0}
+.tour-categories .right-inner-box .tour-categories-style:nth-child(1){left:0}
+.tour-categories .right-inner-box .tour-categories-style:nth-child(2){left:0}
+.tour-categories .right-inner-box .tour-categories-style:nth-child(3){left:0}
+}
+@media(max-width: 400px) {
+.home-banner-area .banner-content h1{font-size:40px;text-align:center}
+.home-banner-area .shapes-layer-one{display:none}
+.welcome-area .section-title-version-2 h1{font-size:28px;text-align:center}
+.welcome-area .section-title-version-2 h1::before{position:absolute;content:"";margin-left:97px;top:78px}
+.welcome-area .single-welcome-text{padding-right:0}
+.welcome-area .single-welcome-area{display:none}
+.welcome-area .section-title-version-2 h1::before{position:absolute;content:"";margin-left:93px;top:78px}
+.tour-section .item-single .content h3{font-size:16px;font-weight:700}
+}
+.flights img{max-height:160px;width:auto!important;margin:0 auto}
+.flights .sppan{margin:3px;border:2px solid #282a77;box-shadow: 0px 0px 15px rgb(251 194 194 / 10%);-webkit-box-shadow: 0px 0px 15px rgb(251 194 194 / 10%);}
+</style>
+</head>
+<body>
+<header class="main-header">
+<div class="header-top">
+<div class="container">
+<div class="outer-box clearfix">
+<div class="top-right float-sm-right">
+<ul class="topbar-info">
+<li><a href="mailto:nitin@holidaysbynits.com"><i class="fa fa-envelope"></i> nitin@holidaysbynits.com</a></li>
+<li> <a href="tel:+919999831144"><i class="fa fa-phone"></i>+91-9599784101</a></li>
+</ul>
+<div class="menu-right-content">
+<div class="link-btn"><a href="#" class="theme-btn" data-toggle="modal" data-target="#enquiry-section">ENQUIRY NOW</a></div>
+</div>
+</div>
+<div class="top-left float-sm-left">
+<div class="social-links clearfix">
+<a href="javascript:void(0);">Follow Us :</a>
+<a href="https://www.facebook.com/Uttarakhandventures" target="_blank"><span class="fa fa-facebook"></span></a>  
+<a href="https://api.whatsapp.com/send?phone=9999831144&amp;text=" target="_blank"><span class="fa fa-whatsapp"></span></a>  
+<a href="https://www.instagram.com/uttarakhand_ventures/" target="_blank"><span class="fa fa-instagram"></span></a>
+<a href="https://www.youtube.com/channel/UCY2SDX7MIk8LdgmnKB6vVkA" target="_blank"><span class="fa fa-youtube-play"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="header-upper">
+<div class="container clearfix">
+<div class="float-left logo-outer">
+<div class="logo">
+<a href="./">
+<img src="assets/images/logo.png" alt="" title="">
+</a>
+</div>
+</div>
+<div class="float-right upper-right clearfix">
+<div class="nav-outer clearfix">
+<nav class="main-menu navbar-expand-lg">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+</button>
+</div>
+<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+  <ul class="navigation clearfix">
+    <li class="nav-item"><a href="">Home</a></li>
+    <li class="nav-item"><a href="#tour-categories topdivwithback">Tour Categories</a></li>
+    <li class="nav-item"><a href="#whychooseus">Why Choose Us</a></li>
+    <li class="nav-item"><a href="#aboutus">About us</a></li>
+    <li class="nav-item"><a href="#visitedplace">Visited Places</a></li>
+    <li class="nav-item"><a href="#testimonials">Testimonials</a></li>
+      <li> <a href="quickenquiry"> Quick Inquiry</a>
+    </ul>
+</div>
+</nav>
+<!-- <div class="menu-right-content">
+<div class="link-btn"><a href="#" class="theme-btn" data-toggle="modal" data-target="#enquiry-section">ENQUIRY NOW</a></div>
+</div> -->
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-header">
+<div class="container">
+<div class="clearfix">
+<div class="logo float-left">
+<a href="./" class="img-responsive">
+<img src="assets/images/logo.png" alt="" title="">
+</a>
+</div>
+<div class="right-col float-right">
+<nav class="main-menu navbar-expand-lg">
+<div class="navbar-collapse collapse clearfix">
+<ul class="navigation clearfix">
+  <ul class="navigation clearfix">
+    <li class="nav-item"><a href="">Home</a></li>
+    <li class="nav-item"><a href="#tour-categories topdivwithback">Tour Categories</a></li>
+    <li class="nav-item"><a href="#whychooseus">Why Choose Us</a></li>
+    <li class="nav-item"><a href="#aboutus">About us</a></li>
+    <li class="nav-item"><a href="#visitedplace">Visited Places</a></li>
+    <li class="nav-item"><a href="#testimonials">Testimonials</a></li>
+      <li> <a href="quickenquiry"> Quick Inquiry</a>
+    </ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</header><div class="home-banner-area ptb bg-white">
+<div class="container-fluid">
+<div class="inner-container">
+<div class="shapes-layer-one">
+	<img src="assets/images/image/shape1.png" alt="bg-shapes" class="shape1">
+	<img src="assets/images/image/shape2.png" alt="bg-shapes" class="shape2">
+	<img src="assets/images/image/shape3.png" alt="bg-shapes" class="shape3">
+	<img src="assets/images/image/shape4.png" alt="bg-shapes" class="shape4">
+</div>
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="banner-content mb-30">
+<h1>Don't just travel; make it extraordinary!</h1>
+<p>Book Your Uttarakhand Trip Today and immerse yourself in breathtaking landscapes, tranquil lakes, and majestic mountains. Adventure awaits—reserve your spot now!</p>
+<div class="enquiry-form">
+ <form class="callbkFrm">
+<div class="row">
+<div class="col-lg-6 col-sm-6">
+<div class="select-box">
+  <i class="fa fa-user"></i>
+<input type="text" placeholder="Your Name*" name="name" required="" class="date-select form-control" />
+</div>
+</div>
+<div class="col-lg-6 col-sm-6">
+<div class="select-box">
+  <i class="fa fa-phone-square"></i>
+<input type="number" placeholder="Phone Number*" name="phone" required="" class="date-select form-control" />
+</div>
+</div>
+<div class="col-lg-6 col-sm-6">
+<div class="select-box">
+  <i class="fa fa-envelope"></i>
+<input type="email" placeholder="Email Address*" required="" name="emailid" class="date-select form-control"/>
+</div>
+</div>
+<div class="col-lg-6 col-sm-6">
+<div class="select-box">
+  <i class="fa fa-comments"></i>
+<input  class="date-select form-control" type="text" placeholder="Any Message" name="msg"/>
+</div>
+</div>
+<div class="col-lg-12 mt-15">
+<button type="submit" class="btn-primary btn actionbtn">Enquiry Now</button>
+</div>
+</div>
+<div class="clmsg mt-10"></div>
+</form>
+</div>
+</div>
+</div>
+<div class="col-lg-6 pr-0">
+<div class="banner-slider owl-carousel ">
+<div class="slider-item">
+<div class="image">
+<img src="assets/images/image/banners/1.jpg" alt="Demo Image">
+</div>
+</div>
+<div class="slider-item">
+<div class="image">
+<img src="assets/images/image/banners/2.jpg" alt="Demo Image">
+</div>
+</div>
+<div class="slider-item">
+<div class="image">
+<img src="assets/images/image/banners/3.jpg" alt="Demo Image">
+</div>
+</div>
+<div class="slider-item">
+<div class="image">
+<img src="assets/images/image/banners/4.jpg" alt="Demo Image" >
+</div>
+</div>
+<div class="slider-item">
+<div class="image">
+<img src="assets/images/image/banners/5.jpg" alt="Demo Image">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>	
+<section class="welcome-area topdivwithback">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="single-welcome-text">
+<div class="section-title-version-2">
+<h1>Welcome To Uttarakhand Ventures</h1>
+<div class="welcome-content">
+<p>Uttarakhand Ventures is the dream made true of Airways Travels which was established in 2009. Our team of specialised personnel have roots in Uttarakhand which in turn reflects their passion and zeal on dealing with the clients. From the day of inception, it was made sure that each client was special and was hence treated with full integrity and transparency ensuring a unique experience for every traveller.</p>
+</div>
+</div>
+</div>
+<div class="rdmcen">
+<a href="about" class="read-mor">READ MORE</a>
+</div>
+</div>
+<div class="col-md-6">
+<div class="single-welcome-area">
+<div class="single-imag">
+<img src="assets/images/image/title1.jpg" alt="" class="img-thumbnail img-responsive">
+</div>
+<div class="overlay-image">
+<img src="assets/images/image/title2.jpg" alt="" class="img-thumbnail img-responsive">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="tour-categories topdivwithback" id="tour-categories topdivwithback">
+<div class="container">
+<div class="sec-title centered">
+<h4>Popular</h4>
+<h1>Tour Categories</h1>
+</div>
+<div class="row">
+<div class="col-lg-4 col-md-12 col-sm-12">
+<div class="left-inner-box">
+<div class="tour-categories-style wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+  <div class="tour-img">
+  <img src="assets/images/image/icons/newlyweds.png">
+  </div>
+<h3>Destination Wedding</h3>
+<p>Let's Create the wedding of your dreams.</p>
+</div>
+<div class="tour-categories-style wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
+  <div class="tour-img">
+  <img src="assets/images/image/icons/couple.png">
+</div>
+<h3>Honeymoon Tours</h3>
+<p>Honeymoon Packages that Create Memories to last a Lifetime.</p>
+</div>
+<div class="tour-categories-style wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+  <div class="tour-img">
+  <img src="assets/images/image/icons/family.png">
+</div>
+<h3>Our Achievement</h3>
+<p>Airways Travels features the list of top family holiday packages.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-12 col-sm-12">
+<div class="image-box">
+<img class="float-bob-y" src="assets/images/image/wel.png" alt="">
+</div>
+</div>
+<div class="col-lg-4 col-md-12 col-sm-12">
+<div class="right-inner-box">
+<div class="tour-categories-style wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
+  <div class="tour-img">
+  <img src="assets/images/image/icons/adventure.png">
+</div>
+<h3>Adventure Tours</h3>
+<p>Opt for best adventure tours through us.</p>
+</div>
+<div class="tour-categories-style wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+  <div class="tour-img">
+  <img src="assets/images/image/icons/group.png">
+</div>
+<h3>Group Tours</h3>
+<p>Book amazing group packages and explore the india like never before.</p>
+</div>
+<div class="tour-categories-style wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
+  <div class="tour-img">
+  <img src="assets/images/image/icons/mice.png">
+</div>
+<h3>MICE Tours</h3>
+<p>We offer best MICE tour packages at low cost.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="parallax-section">
+<div class="container">
+<h1>Elevate Your Travel Experience With Uttarakhand Ventures, Uncover The Best Hotel Deals Tailored Just For You.</h1>
+<div class="text-center btn-element">
+<a href="tel:+919999831144" class="callus-btn"><i class="fa fa-phone"></i>Call Us</a></div>
+</div>
+</section>
+<section class="features-section topdivwithback" id="whychooseus">
+<div class="container">
+<div class="sec-title centered">
+<h1>Why Choose Us</h1>
+</div>
+<div class="row">
+<div class="col-sm-4">
+<div class="eachusp">
+<img src="images/collaborative.png">
+<div class="usppan">
+<p class="usphd">India's best leading Travel Agency</p>
+<p class="usptxt">Uttarakhand Ventures has always strived to be a trustworthy and accessible tour operator, delivering on its commitments.</p>
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="eachusp">
+<img src="images/award.png">
+<div class="usppan">
+<p class="usphd">Best Deals Guaranteed</p>
+<p class="usptxt">We guarantee the lowest prices and best value on all your travel bookings, ensuring you get the best deals available.</p>
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="eachusp">
+<img src="images/satisfaction.png">
+<div class="usppan">
+<p class="usphd">Customer Satisfaction</p>
+<p class="usptxt">We prioritize customer satisfaction, ensuring every journey is exceptional and meets your highest expectations.</p>
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="eachusp">
+<img src="images/checked.png">
+<div class="usppan">
+<p class="usphd">Hassle Free Holiday Planning</p>
+<p class="usptxt">Enjoy hassle-free holiday planning with our seamless services, ensuring a smooth and enjoyable travel experience.</p>
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="eachusp">
+<img src="images/money.png">
+<div class="usppan">
+<p class="usphd">No Hidden Cost</p>
+<p class="usptxt">No hidden costs—what you see is what you pay, with transparent pricing for a worry-free experience.</p>
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="eachusp">
+<img src="images/deal.png">
+<div class="usppan">
+<p class="usphd">Serving satisfied clients for over 12 years</p>
+<p class="usptxt">Uttarakhand Ventures has been serving satisfied clients for over 12 years with dependable and exceptional travel services.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<style type="text/css">
+.eachusp{background: rgb(40 42 119);padding: 15px 15px;border-radius: 12px;color:#fff;text-align:center;margin-bottom:30px;min-height: 253px;}
+.eachusp img{}
+.usppan .usphd{font-family: 'Nunito', sans-serif;font-weight:700;font-size:18px;margin-bottom: 5px;}
+.usppan .usptxt{font-size: 13px;}
+</style>
+<section id="about" class="about-section topdivwithback">
+<div class="root">
+<div class="container fixed-width">
+<div class="row">
+<div class="col-md-5 illu-wrap">
+<div class="hidden-sm-down">
+<div class="illustration one"></div>
+<figure class="illustration two ">
+<img src="assets/images/image/about/about2.jpg" alt="about"></figure>
+<figure class="illustration three "><img src="assets/images/image/about/about1.jpg" alt="about"></figure>
+<figure class="illustration four"><img src="assets/images/image/about/about3.jpg" alt="about"></figure>
+<div class="illustration five "></div>
+</div>
+</div>
+<div class="col-md-7">
+<div class="wow fadeInRight" data-wow-offset="-100" data-wow-delay="0.2s" data-wow-duration="0.6s"
+style="visibility: visible; animation-duration: 0.6s; animation-delay: 0.2s; animation-name: fadeInRight;">
+<div>
+<div class="title-about" id="aboutus">
+<h3><span>About us</span></h3>
+</div>
+<p class="use-text-subtitle2">Our mission is to diversify the tech industry through
+accessible education and apprenticeship, unlocking the door to opportunity and
+empowering people to achieve their dreams.</p><a class="theme-btn btn-style-two small-btn" href="about">Read More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="top-vist-tour-section topdivwithback" id="visitedplace">
+<div class="container-fluid">
+<div class="sec-title centered">
+<h4>Top Most</h4>
+<h1>Visited Places</h1>
+</div>
+<div class="top-visited-slider owl-carousel wol-theme owl-nav-none owl-dot-style-one">
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/rishikesh_1722693163448753717_sm.jpg" alt="Rishikesh" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="rishikesh-tour-packages">Rishikesh</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/dhanaulti_1722693564718368530_sm.jpg" alt="Dhanaulti" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="dhanaulti-tour-packages">Dhanaulti</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/ramnagar_1722693542227220782_sm.jpg" alt="Ramnagar" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="ramnagar-tour-packages">Ramnagar</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/jim-corbet_172269350410182932_sm.jpg" alt="Jim Corbett" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="jim-corbett-tour-packages">Jim Corbett</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/mussoorie_1722693461217406252_sm.jpg" alt="Mussoorie" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="mussoorie-tour-packages">Mussoorie</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/nainital_1722693437765087127_sm.jpg" alt="Nainital" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="nainital-tour-packages">Nainital</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/mukteshwar_1722693352473568758_sm.jpg" alt="Mukteshwar" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="mukteshwar-tour-packages">Mukteshwar</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/ranikhet_1722693323802382237_sm.jpg" alt="Ranikhet" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="ranikhet-tour-packages">Ranikhet</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/kausani_1722693298603323787_sm.jpg" alt="Kausani" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="kausani-tour-packages">Kausani</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/binsar_1723358866640496016_sm.jpg" alt="Binsar" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="binsar-tour-packages">Binsar</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/chaukori_1723359019268126373_sm.jpg" alt="Chaukori" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="chaukori-tour-packages">Chaukori</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/bhimtal_1723359197764779890_sm.jpg" alt="Bhimtal" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="bhimtal-tour-packages">Bhimtal</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/lansdowne_1723359208703959143_sm.jpg" alt="Lansdowne" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="lansdowne-tour-packages">Lansdowne</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/dehradun_1723359302937079155_sm.jpg" alt="Dehradun" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="dehradun-tour-packages">Dehradun</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/haridwar_1723359292838633094_sm.jpeg" alt="Haridwar" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="haridwar-tour-packages">Haridwar</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/stay-vista-_1723359342770045695_sm.png" alt="Stay Vista" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="stay-vista--tour-packages">Stay Vista</a></h3>
+</div>
+</div>
+</div>
+<div class="top-vist-tour">
+<div class="inner-box ">
+<img src="image/placeholder.jpg" alt="Blusalzz" class="mx-auto bg-transparent "/>
+<div class="top-vist-tour-content">
+<h3><a href="blusalzz--tour-packages">Blusalzz</a></h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="testimonial-section pb-50 topdivwithback" id="testimonials">
+<div class="container">
+<div class="sec-title centered" >
+<h4>Testimonials</h4>
+<h1>What people say</h1>
+</div>
+<div class="inner-container">
+<div class="pattern-layer-one"></div>
+<div class="testimonial-carousel owl-carousel owl-theme">
+<div class="testimonial-block">
+<div class="inner-box">
+<div class="author-info">
+<div class="info-inner">
+<div class="author-image">
+<div class="image">
+<img src="images/testimonials/user.jpg" alt="Ram Sharma, Delhi" />
+</div>
+</div>
+<div class="author-name">Ram Sharma, Delhi</div>
+<div class="quote-icon flaticon-quote"><i class="fa  fa-quote-left"></i></div>
+</div>
+</div>
+<div class="text">An excellent tour operator. Whether hotel booking or arranging a car, they always make it reach to a new level. My personal experience is great with them. Special thanks to the Airways travels for his cooperation and continuous support.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="testimonial-section pb-50 topdivwithback">
+<div class="container">
+<div class="sec-title centered" >
+<h1>Our Associated Brands</h1>
+</div>
+<div class="airlines-slider owl-carousel flights">
+<div class="sppan"><img src="images/brands/1.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/2.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/3.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/4.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/5.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/6.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/7.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/8.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/9.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/10.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/11.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/12.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/13.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/14.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/15.jpg"  class="image-box" alt=""></div>
+<div class="sppan"><img src="images/brands/16.jpg"  class="image-box" alt=""></div>
+</div>
+</div>
+</section>
+<div class="wrapper-footer wrapper-footer-newsletter">
+<div class="rotate-image">
+<img class="rotate-me" src="assets/images/image/earth-globe.png" alt="">
+</div>
+<div class="main-top-footer">
+<div class="container">
+<div class="row">
+<aside class="col-sm-3 widget_text">
+<div class="footer-column">
+<div class="footer-widget logo-widget">
+<div class="footer-info">
+<p>Our passion is to connect, our guests to the very best of our destinations and to provide the best services to them<p>
+<p><i class="fa fa-phone"></i>+91-9599784101</p>
+<p><i class="fa fa-envelope"></i>nitin@holidaysbynits.com</p>
+<p><i class="fa fa-map-marker"></i>India</p>
+<ul class="social-icon-four">
+<li><a href="#" target="_blank"><span class="fa fa-whatsapp"></span></a></li>
+<li><a href="#" target="_blank"><span class="fa fa-facebook"></a></li>
+<li><a href="#" target="_blank"><span class="fa fa-instagram"></span></a></li>
+<li><a href="#" target="_blank"><span class="fa fa-youtube-play"></span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</aside>
+<aside class="col-sm-3 widget_text"><h3 class="widget-title">Quick Links</h3>
+
+<ul class="menu list-arrow">
+<li><a href="#">Hotels With Us</a></li>
+<li><a href="#">Brand With Us</a></li>
+<li><a href="#">Pay Us</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+</aside>
+<aside class="col-sm-3 widget_text"><h3 class="widget-title">Our Policy</h3>
+<div class="textwidget">
+<ul class="menu list-arrow">
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Refund and Cancellation policy</a></li>
+<!-- <li><a href="javascript:void(0);" data-toggle="modal" data-target="#enquiry-section">Enquiry</a></li> -->
+</ul>
+</div>
+</aside>
+<aside class="col-sm-3 custom-instagram widget_text fbpan">
+<div class="fb-page" data-href="#" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Uttarakhandventures/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Uttarakhandventures/">Uttarakhand Ventures</a></blockquote></div>
+</aside>
+</div>
+</div>
+</div>
+<div class="container wrapper-copyright">
+<div class="copyright">
+<p>Copyrights (c) 2024 Deepak Kumar Pathak. All rights reserved. Maintained by
+<a href="www.google.com" target="_blank" class="com-name">Digixseo</a></p></div>
+</div>
+</div>
+<div class="wrapper-subscribe" id="quickenquiry">
+<div class="subscribe_shadow"></div>
+<div class="form-subscribe stick-to-bottom form-subscribe-full-width">
+<div class="text-white title-center footer-title-box">
+<div class="footer-reveal-title centered" >
+<h4>Quick Enquiry</h4>
+<h1>Feel Free to contact Us</h1>
+</div>
+</div>
+<div class="form-subscribe-form-wrap">
+<aside class="mailchimp-container">
+<div class="container">
+<div class="quiry-form">
+<form id="callbkFrm" class="callbkFrm">
+<div class="row rmvrowpad">
+<div class="col-lg-12 footer-enq-box">
+<div class="row">
+<div class="col-lg-3 bord-right pad-right">
+<input type="text" placeholder="Your Name*" name="name" id="name" required="" class=" form-control" />
+</div>
+<div class="col-lg-2 bord-right pad-right pad-left">
+<input type="number" placeholder="Phone Number*" name="phone" id="phone" required="" class=" form-control" />
+</div>
+<div class="col-lg-2 bord-right pad-right pad-left">
+<input type="email" placeholder="Email Address*" required="" id="email" name="emailid" class=" form-control"/>
+</div>
+<div class="col-lg-3 pad-right pad-left">
+<input  class="form-control" type="text" placeholder="Any Message" id="message" name="msg"/>
+</div>
+<div class="col-lg-2 pad-left">
+<button type="submit" class="btn actionbtn">Enquiry Now</button>
+</div>
+</div>
+</div>
+</div>
+<div class="clmsg mt-10"></div>
+</form>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<div class="modal fade enquiry-section" id="enquiry-section" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="enquiry-section-inner"> 	          
+<form id="callbkFrm" class="callbkFrm">
+<div class="sec-title centered enq-title">
+<h1>Enquiry Now</h1>
+<button type="button" class="close cls-btn" data-dismiss="modal">×</button>
+</div>
+<input type="hidden" name="hid" id="hid">
+<div class="row">
+<div class="col-lg-12">
+<div class="form-group">
+<input type="text" name="name" class="enquiry-form" id="name" placeholder="Name" required="">
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<input type="text" name="phone" class="enquiry-form" id="phone" placeholder="Phone" required="">
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<input type="email" name="emailid" class="enquiry-form required email" id="email" placeholder="Email" required="">
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<textarea name="msg" class="enquiry-form textarea required" id="message" placeholder="Message..."></textarea>
+</div>
+</div>
+</div>
+<div class="form-group style-two text-center">
+<button class="theme-btn btn-style-two btn actionbtn" type="submit" data-loading-text="Please wait...">Send Message</button>
+</div>
+<div class="book-tour-field clmsg"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<section class="navbottom" id="navbottom">
+<ul class="listmenu">
+<li><a href="./"><svg class="svg_icon"><use xlink:href="assets/images/image/icons/icons.svg#iw-home"/></svg> Home</a></li>
+<li><a href="mailto:contact@airwaystravels.com"><svg class="svg_icon"><use xlink:href="assets/images/image/icons/icons.svg#iw-mail_outline"/></svg> Mail</a></li>
+<li><a href="tel:+919999831144"><svg class="svg_icon"><use xlink:href="assets/images/image/icons/icons.svg#iw-phone-call"/></svg> Call</a></li>
+<li><a href="#" class="theme-btn" data-toggle="modal" data-target="#enquiry-section"><svg class="svg_icon"><use xlink:href="assets/images/image/icons/icons.svg#iw-file-text-o"/></svg> Enquiry</a></li>
+</ul>   
+</section>
+<a href="#" target="_blank" class="whatsappbtn"><i class="fa fa-whatsapp"></i></a>
+<button class="scroll-top scroll-to-target" data-target="html"> <span class="fa fa-angle-up"></span> 
+</button>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popover.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/script.js"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="#" nonce="nYqyBNcb"></script><script type="text/javascript">
+  if ($('.top-visited-slider').length) {
+    $('.top-visited-slider').owlCarousel({
+      loop:true,
+      margin:30,
+      nav:true,
+      smartSpeed: 700,
+      autoplay: 4000,
+      navText: [ '<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>' ],
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:2
+        },
+        800:{
+          items:3
+        },
+        1024:{
+          items:4
+        },
+        1200:{
+          items:5
+        }
+      }
+    });       
+  }  
+ 
+ $('.destination-slider').owlCarousel({
+    loop:true,
+    margin:20,
+    dots: false,
+    nav: true,
+  navText: ["<i class='fa  fa-chevron-circle-left'></i>", "<i class='fa  fa-chevron-circle-right'></i>"],
+  autoplay: true,
+  autoplayHoverPause: true,
+  autoplayTimeout: 8500,
+  smartSpeed: 1000,
+  responsiveClass: true,
+    responsive:{
+        0:{
+            items:2
+        },
+        600:{
+            items:5
+        }
+    }
+})
+ $('.airlines-slider').owlCarousel({
+    loop: true,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout: 2500,
+    smartSpeed: 450,
+    margin:3,
+    items: 4
+  })
+</script>
+</body>
+</html>
