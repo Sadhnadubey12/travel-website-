@@ -214,6 +214,31 @@ if(res.status){location.href=res.msg;}else{$(".clmsg").html(res.msg);}
 			}
 		});
 	});
+
+// Get elements
+const button = document.getElementById('itinerary-button');
+const card = document.getElementById('itinerary-card');
+const closeBtn = document.getElementById('close-card');
+
+// Show card on button click
+button.addEventListener('click', () => {
+  card.classList.add('open');
+});
+
+// Hide card on close button click
+closeBtn.addEventListener('click', () => {
+  card.classList.remove('open');
+});
+
+// Close card when clicking outside
+document.addEventListener('click', (event) => {
+  if (!card.contains(event.target) && !button.contains(event.target)) {
+    card.classList.remove('open');
+  }
+});
+
+
+
 	
 
 })(window.jQuery);
