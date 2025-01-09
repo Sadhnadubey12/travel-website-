@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Enquiry Form</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and Base Styles */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #f6d365, #fda085);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      /* Form container */
+      .enquiry-form {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-form h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .col-lg-6,
+      .col-sm-6 {
+        flex: 1 1 calc(50% - 20px);
+      }
+
+      .select-box {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .select-box i {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        color: #6c757d;
+        font-size: 18px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px 40px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #333;
+        background-color: #f9f9f9;
+        box-sizing: border-box;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+      }
+
+      /* Travel icons for input fields */
+      .select-box i {
+        color: #007bff;
+      }
+
+      .select-box i.fa-user {
+        color: #28a745;
+      }
+
+      .select-box i.fa-phone-square {
+        color: #ff5722;
+      }
+
+      .select-box i.fa-envelope {
+        color: #ffc107;
+      }
+
+      .select-box i.fa-comments {
+        color: #17a2b8;
+      }
+
+      .btn-primary {
+        display: block;
+        background-color: #007bff;
+        color: white;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        width: auto; /* Button width will adjust to content */
+        margin: 20px auto;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      /* Success message */
+      .clmsg {
+        text-align: center;
+        font-size: 16px;
+        color: green;
+        margin-top: 10px;
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        .col-lg-6,
+        .col-sm-6 {
+          flex: 1 1 100%;
+        }
+        .btn-primary {
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="enquiry-form">
+      <h1>Travel Enquiry Form</h1>
+      <form id="enquiryForm" class="callbkFrm">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-user"></i>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name*"
+                name="name"
+                required=""
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-phone-square"></i>
+              <input
+                type="number"
+                id="phone"
+                placeholder="Phone Number*"
+                name="phone"
+                required=""
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email Address*"
+                name="emailid"
+                required=""
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-comments"></i>
+              <input
+                class="form-control"
+                id="msg"
+                type="text"
+                placeholder="Any Message"
+                name="msg"
+              />
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <button type="submit" class="btn-primary btn actionbtn">
+              Enquiry Now
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="clmsg" id="successMessage">
+        <p>Message sent successfully!</p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      // Initialize EmailJS with your public key
+      emailjs.init("YM4D8eTh4T4PNIIoe"); // Public key
+
+      // Handle form submission
+      document
+        .getElementById("enquiryForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent default form submission
+
+          // Retrieve values from form fields
+          var name = document.getElementById("name").value;
+          var phone = document.getElementById("phone").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("msg").value;
+
+          // Prepare the data to send via EmailJS
+          var templateParams = {
+            to_name: "Travel Booking Wala Team", // Static recipient name
+            from_name: name, // User's name
+            phone: phone, // User's phone number
+            emailid: email, // User's email
+            msg: message, // User's message
+          };
+
+          // Send the email using EmailJS
+          emailjs
+            .send("service_lb0n9p9", "template_z4ko9h7", templateParams) // Your Service ID and Template ID
+            .then(
+              function (response) {
+                // On success, display success message
+                console.log("SUCCESS!", response.status, response.text);
+                document.getElementById("successMessage").style.display =
+                  "block"; // Show success message
+                document.getElementById("enquiryForm").reset(); // Reset the form after submission
+              },
+              function (error) {
+                // On error, display alert
+                console.error("FAILED...", error);
+                alert(
+                  "There was an error sending your message. Please try again."
+                );
+              }
+            );
+        });
+    </script>
+  </body>
+</html>

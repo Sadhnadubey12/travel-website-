@@ -12,6 +12,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+  <!-- Include EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+
 <style type="text/css">
 .lnkhigh{line-height:21px;position:absolute;right:42px;top:12px;background:#e80c0c;padding:0 16px;font-size:12px;color:#fff;border-radius:2px;animation:blink 1s linear infinite}.lnkhigh::after{border-style:solid;border-width:5px 5px 0 0;border-color:#b93e19 transparent transparent;bottom:-4px;content:"";right:0;position:absolute}.lnkhigh i{position:absolute;opacity:0;top:0;left:0;background:-moz-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:-webkit-gradient(linear,left top,right top,color-stop(0%,rgba(255,255,255,0)),color-stop(1%,rgba(255,255,255,0.03)),color-stop(30%,rgba(255,255,255,0.85)),color-stop(50%,rgba(255,255,255,0.85)),color-stop(70%,rgba(255,255,255,0.85)),color-stop(71%,rgba(255,255,255,0.85)),color-stop(100%,rgba(255,255,255,0)));background:-webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:-o-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:-ms-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#00ffffff',GradientType=1);width:35%;height:100%;transform:skew(-10deg,0deg);-webkit-transform:skew(-10deg,0deg);-moz-transform:skew(-10deg,0deg);-ms-transform:skew(-10deg,0deg);-o-transform:skew(-10deg,0deg);animation:move 2s;animation-iteration-count:infinite;animation-delay:.3s;-webkit-animation:move 2s;-webkit-animation-iteration-count:infinite;-webkit-animation-delay:.3s;-moz-transform:skew(-10deg,0deg);-moz-animation:move 2s;-moz-animation-iteration-count:infinite;-moz-animation-delay:.3s;-ms-transform:skew(-10deg,0deg);-ms-animation:move 2s;-ms-animation-iteration-count:infinite;-ms-animation-delay:.3s;-o-transform:skew(-10deg,0deg);-o-animation:move 2s;-o-animation-iteration-count:infinite;-o-animation-delay:.3s}@keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}@-webkit-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}@-moz-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:88%}}@-ms-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}@-o-keyframes move{0%{left:0;opacity:0}5%{opacity:0}48%{opacity:.5}80%{opacity:0}100%{left:82%}}
 .fxtxt{position: fixed;
@@ -313,7 +320,10 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
 <li> <a href="tel:+918595519090"><i class="fa fa-phone"></i>+91-8595519090</a></li>
 </ul>
 <div class="menu-right-content">
-<div class="link-btn"><a href="#" class="theme-btn" data-toggle="modal" data-target="#enquiry-section">ENQUIRY NOW</a></div>
+<!-- Updated Enquiry Button -->
+<div class="link-btn">
+  <a href="enquiry.html" class="theme-btn">ENQUIRY NOW</a>
+</div>
 </div>
 </div>
 <div class="top-left float-sm-left">
@@ -377,41 +387,80 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
   <div class="banner-content mb-30">
     <h1>Don't just travel; make it extraordinary!</h1>
     <p>Book Your Short and Long Holiday Trip Today and immerse yourself in breathtaking landscapes, tranquil lakes, and majestic mountains. Adventure awaits—reserve your spot now!</p>
-    
-    <div class="enquiry-form">
-      <form id="enquiryForm" class="callbkFrm" action="#" method="post">
+   
+ <div class="enquiry-form">
+      <form id="enquiryForm" class="callbkFrm">
         <div class="row">
           <div class="col-lg-6 col-sm-6">
             <div class="select-box">
               <i class="fa fa-user"></i>
-              <input type="text" placeholder="Your Name*" name="name" required="" class="date-select form-control" />
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name*"
+                name="name"
+                required=""
+                class="form-control"
+              />
             </div>
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="select-box">
               <i class="fa fa-phone-square"></i>
-              <input type="number" placeholder="Phone Number*" name="phone" required="" class="date-select form-control" />
+              <input
+                type="number"
+                id="phone"
+                placeholder="Phone Number*"
+                name="phone"
+                required=""
+                class="form-control"
+              />
             </div>
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="select-box">
               <i class="fa fa-envelope"></i>
-              <input type="email" placeholder="Email Address*" required="" name="emailid" class="date-select form-control"/>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email Address*"
+                name="emailid"
+                required=""
+                class="form-control"
+              />
             </div>
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="select-box">
               <i class="fa fa-comments"></i>
-              <input class="date-select form-control" type="text" placeholder="Any Message" name="msg"/>
+              <input
+                class="form-control"
+                id="msg"
+                type="text"
+                placeholder="Any Message"
+                name="msg"
+              />
             </div>
           </div>
           <div class="col-lg-12 mt-15">
-            <button type="submit" class="btn-primary btn actionbtn">Enquiry Now</button>
+            <button type="submit" class="btn-primary btn actionbtn">
+              Enquiry Now
+            </button>
           </div>
         </div>
-        <div class="clmsg mt-10"></div>
       </form>
+      <div class="clmsg mt-10" id="successMessage" style="display: none">
+        <p>Message sent successfully!</p>
+      </div>
     </div>
+
+ 
+
+
+
+
+</div>
+
   </div>
 
  
@@ -1125,44 +1174,58 @@ empowering people to achieve their dreams.</p><a class="theme-btn btn-style-two 
     items: 4
   })
 </script>
- <script>
-    // JavaScript to handle form submission
-    document
-      .getElementById("enquiryForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission
 
-        // Collect form data
-        const name = document.getElementsByName("name")[0].value;
-        const phone = document.getElementsByName("phone")[0].value;
-        const email = document.getElementsByName("emailid")[0].value;
-        const message = document.getElementsByName("msg")[0].value;
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-        // Construct the mailto URL with form data
-        const mailtoLink =
-          "mailto:travelbookingwala@gmail.com" +
-          "?subject=Holiday Trip Enquiry" +
-          "&body=" +
-          "Name: " +
-          name +
-          "%0D%0A" +
-          "Phone: " +
-          phone +
-          "%0D%0A" +
-          "Email: " +
-          email +
-          "%0D%0A" +
-          "Message: " +
-          message;
+    <script>
+      // Initialize EmailJS with your public key
+      emailjs.init("YM4D8eTh4T4PNIIoe"); // Public key
 
-        // Open the email client with the populated mailto link
-        window.location.href = mailtoLink;
+      // Handle form submission
+      document
+        .getElementById("enquiryForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent default form submission
 
-        // Optional: Display confirmation message
-        alert(
-          "Your enquiry has been submitted. Please check your email client to send the details."
-        );
-      });
-  </script>
+          // Retrieve values from form fields
+          var name = document.getElementById("name").value;
+          var phone = document.getElementById("phone").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("msg").value;
+
+          // Prepare the data to send via EmailJS
+          var templateParams = {
+            to_name: "Travel Booking Wala Team", // Static recipient name
+            from_name: name, // User's name
+            phone: phone, // User's phone number
+            emailid: email, // User's email
+            msg: message, // User's message
+          };
+
+          // Send the email using EmailJS
+          emailjs
+            .send("service_lb0n9p9", "template_z4ko9h7", templateParams) // Your Service ID and Template ID
+            .then(
+              function (response) {
+                // On success, display success message
+                console.log("SUCCESS!", response.status, response.text);
+                document.getElementById("successMessage").style.display =
+                  "block"; // Show success message
+
+                // Reset the form after submission
+                document.getElementById("enquiryForm").reset();
+              },
+              function (error) {
+                // On error, display alert
+                console.error("FAILED...", error);
+                alert(
+                  "There was an error sending your message. Please try again."
+                );
+              }
+            );
+        });
+    </script>
+
+     
 </body>
 </html>

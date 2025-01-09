@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enquiry Form</title>
+  </head>
+  <body>
+    <div class="enquiry-form">
+      <form id="enquiryForm" class="callbkFrm">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-user"></i>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name*"
+                name="name"
+                required=""
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-phone-square"></i>
+              <input
+                type="number"
+                id="phone"
+                placeholder="Phone Number*"
+                name="phone"
+                required=""
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email Address*"
+                name="emailid"
+                required=""
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="select-box">
+              <i class="fa fa-comments"></i>
+              <input
+                class="form-control"
+                id="msg"
+                type="text"
+                placeholder="Any Message"
+                name="msg"
+              />
+            </div>
+          </div>
+          <div class="col-lg-12 mt-15">
+            <button type="submit" class="btn-primary btn actionbtn">
+              Enquiry Now
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="clmsg mt-10" id="successMessage" style="display: none">
+        <p>Message sent successfully!</p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      // Initialize EmailJS with your public key
+      emailjs.init("YM4D8eTh4T4PNIIoe"); // Public key
+
+      // Handle form submission
+      document
+        .getElementById("enquiryForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent default form submission
+
+          // Retrieve values from form fields
+          var name = document.getElementById("name").value;
+          var phone = document.getElementById("phone").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("msg").value;
+
+          // Prepare the data to send via EmailJS
+          var templateParams = {
+            to_name: "Travel Booking Wala Team", // Static recipient name
+            from_name: name, // User's name
+            phone: phone, // User's phone number
+            emailid: email, // User's email
+            msg: message, // User's message
+          };
+
+          // Send the email using EmailJS
+          emailjs
+            .send("service_lb0n9p9", "template_z4ko9h7", templateParams) // Your Service ID and Template ID
+            .then(
+              function (response) {
+                // On success, display success message
+                console.log("SUCCESS!", response.status, response.text);
+                document.getElementById("successMessage").style.display =
+                  "block"; // Show success message
+
+                // Reset the form after submission
+                document.getElementById("enquiryForm").reset();
+              },
+              function (error) {
+                // On error, display alert
+                console.error("FAILED...", error);
+                alert(
+                  "There was an error sending your message. Please try again."
+                );
+              }
+            );
+        });
+    </script>
+  </body>
+</html>
