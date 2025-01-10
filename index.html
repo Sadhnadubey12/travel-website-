@@ -384,7 +384,6 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
 <div class="row align-items-center">
 <div class="col-lg-6">
 
-
   <div class="banner-content mb-30">
     <h1>Don't just travel; make it extraordinary!</h1>
     <p>Book Your Short and Long Holiday Trip Today and immerse yourself in breathtaking landscapes, tranquil lakes, and majestic mountains. Adventure awaits—reserve your spot now!</p>
@@ -393,7 +392,7 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
       <form id="enquiryForm" class="callbkFrm">
         <div class="row">
           <div class="col-lg-6 col-sm-6">
-            <div class="select-box">
+            <!-- <div class="select-box">
               <i class="fa fa-user"></i>
               <input
                 type="text"
@@ -403,10 +402,10 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
                 required=""
                 class="form-control"
               />
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-6 col-sm-6">
-            <div class="select-box">
+            <!-- <div class="select-box">
               <i class="fa fa-phone-square"></i>
               <input
                 type="number"
@@ -416,10 +415,10 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
                 required=""
                 class="form-control"
               />
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-6 col-sm-6">
-            <div class="select-box">
+            <!-- <div class="select-box">
               <i class="fa fa-envelope"></i>
               <input
                 type="email"
@@ -429,10 +428,10 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
                 required=""
                 class="form-control"
               />
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-6 col-sm-6">
-            <div class="select-box">
+            <!-- <div class="select-box">
               <i class="fa fa-comments"></i>
               <input
                 class="form-control"
@@ -441,12 +440,13 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
                 placeholder="Any Message"
                 name="msg"
               />
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-12 mt-15">
-            <button type="submit" class="btn-primary btn actionbtn">
-              Enquiry Now
-            </button>
+           <button class="btn-primary btn actionbtn" onclick="openEnquiryPage()">
+  Enquiry Now
+</button>
+
           </div>
         </div>
       </form>
@@ -461,8 +461,6 @@ to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}
 
 
 </div>
-
- 
 
 
  
@@ -1238,6 +1236,11 @@ Ranthambhore Tour</a></h3>
 </script>
 
 
+ <script>
+  function openEnquiryPage() {
+    window.location.href = "enquiry.html"; // This will navigate to the enquiry.html page
+  }
+</script>
 
      
 </body>
